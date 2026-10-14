@@ -1,54 +1,59 @@
 /**
  * Main Application Controller
- * Handles Skills matrix, Timeline rendering, Clipboard copy toast,
- * Smooth scroll navigation, and Contact Form.
+ * Handles Skills matrix, Experience Timeline, Clipboard copy toast,
+ * Smooth scroll navigation, and Contact Form using verified CV profile.
  */
 (function() {
   'use strict';
 
-  // 1. Competencies Data
+  // 1. Technical Competencies Matrix from CV
   const skillsData = [
     {
-      category: 'Deep Learning & Modeling',
+      category: 'Deep Learning & Computer Vision',
+      icon: '👁️',
+      skills: ['PyTorch', 'ConvNeXtV2', 'Focal Self-Attention', 'OpenCLIP', 'OpenCV', 'Scikit-learn', 'Medical Imaging (ISIC 2019)']
+    },
+    {
+      category: 'Generative AI & Agent Workflows',
+      icon: '🤖',
+      skills: ['LLMs & Prompting', 'RAG Pipelines', 'AI Voice Agents (STT/TTS)', 'Tool Calling', 'Milvus (Vector DB)', 'Embeddings']
+    },
+    {
+      category: 'Reinforcement Learning',
       icon: '🧠',
-      skills: ['PyTorch', 'Hugging Face', 'Transformers', 'TorchVision', 'Deep RL (PPO/SAC)', 'Gymnasium', 'JAX / NumPy', 'Scikit-learn']
+      skills: ['Deep RL (PPO, DDPG, A2C)', 'Actor-Critic Policies', 'Custom Gym Envs', 'MDP Formulation', 'Turbulence Index']
     },
     {
-      category: 'Multimodal AI & Vector Search',
-      icon: '🔍',
-      skills: ['CLIP / BLIP', 'Video-Text Alignment', 'FAISS', 'Milvus', 'Qdrant', 'OpenCV', 'Temporal Embeddings', 'Cosine Indexing']
-    },
-    {
-      category: 'Systems, MLOps & High Performance',
+      category: 'Backend, Cloud & MLOps',
       icon: '⚡',
-      skills: ['CUDA / GPU Acceleration', 'TensorRT', 'ONNX Runtime', 'Docker', 'FastAPI', 'Linux / Shell Scripting', 'Triton Server']
+      skills: ['FastAPI', 'Docker', 'Linux / Shell Scripting', 'Git & CI/CD', 'Redis', 'AWS']
     },
     {
-      category: 'Languages & Core Tooling',
+      category: 'Languages & Data Engineering',
       icon: '💻',
-      skills: ['Python (AsyncIO / Multiprocessing)', 'C++', 'SQL', 'Git & GitHub CI/CD', 'REST & gRPC APIs']
+      skills: ['Python', 'C++', 'SQL', 'JavaScript / TypeScript', 'PostgreSQL / MySQL', 'Pandas / NumPy']
     }
   ];
 
-  // 2. Timeline Milestones Data
+  // 2. Timeline Milestones & Education from CV
   const timelineData = [
     {
-      date: '2024 — Present',
-      title: 'Multimodal Video Retrieval & RL Research',
-      subtitle: 'Applied AI Engineering & Research Exploration',
-      description: 'Architecting dual-encoder video retrieval pipelines, evaluating cross-modal attention formulations, and benchmark comparisons of reinforcement learning vs. evolutionary search algorithms.'
+      date: 'Jan 2026 — Jul 2026',
+      title: 'Intern AI Engineer',
+      subtitle: 'VOS Advisory',
+      description: 'Designed and developed data processing workflows and AI Voice Agent pipelines integrating STT, LLM, RAG, tool calling, and TTS for real-time conversational AI applications. Built and delivered backend microservices and APIs using Python, SQL, Docker, Linux, and Git to support scalable AI agent deployment.'
     },
     {
-      date: '2022 — 2026',
-      title: 'Computer Science (Khoa học Máy tính)',
-      subtitle: 'Undergraduate Foundations & Academic Projects',
-      description: 'Comprehensive study of Algorithms, Operating Systems, Machine Learning, Deep Neural Networks, and Distributed Systems. Lead author and contributor on academic research repositories.'
+      date: 'Jul 2023 — Oct 2026 (expected)',
+      title: 'Bachelor of Computer Science',
+      subtitle: 'University of Information Technology (UIT)',
+      description: 'Specializing in Artificial Intelligence, Deep Learning, and Computer Vision. Outstanding academic performance with a cumulative GPA of 8.4 / 10. Practical research projects in multimodal retrieval, reinforcement learning, and medical diagnostics.'
     },
     {
-      date: '2023 — 2024',
-      title: 'High-Performance Inference & Optimization',
-      subtitle: 'ML Systems Development',
-      description: 'Engineered low-latency model inference servers with TensorRT, dynamic batching, and asynchronous queues to optimize real-time computer vision streams.'
+      date: 'Certifications & Honors',
+      title: 'NVIDIA Certified & Language Proficiency',
+      subtitle: 'Professional Credentials',
+      description: '• NVIDIA Certified: Applications of AI for Anomaly Detection\n• VSTEP B2 (Equivalent to IELTS 6.0 English Proficiency)\n• Extensive experience collaborating with foreign team members in agile sprint environments.'
     }
   ];
 
@@ -81,7 +86,7 @@
         if (projectsSec) {
           projectsSec.scrollIntoView({ behavior: 'smooth' });
           document.querySelectorAll('.tag-pill').forEach(tag => {
-            if (tag.textContent.toLowerCase().includes(skill.toLowerCase())) {
+            if (tag.textContent.toLowerCase().includes(skill.toLowerCase()) || skill.toLowerCase().includes(tag.textContent.toLowerCase())) {
               tag.style.borderColor = 'var(--accent-violet)';
               tag.style.background = 'rgba(139, 92, 246, 0.3)';
               setTimeout(() => {
@@ -107,7 +112,7 @@
         <div class="timeline-card glass-panel">
           <h4>${item.title}</h4>
           <div style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.65rem;">${item.subtitle}</div>
-          <p>${item.description}</p>
+          <p style="white-space: pre-line;">${item.description}</p>
         </div>
       </div>
     `).join('');
@@ -199,7 +204,7 @@
       const email = document.getElementById('form-email').value.trim();
       const message = document.getElementById('form-message').value.trim();
 
-      const mailtoUrl = `mailto:thinhdangquoc.ai@gmail.com?subject=${encodeURIComponent('Inquiry from ' + name)}&body=${encodeURIComponent('Sender: ' + name + ' (' + email + ')\n\nMessage:\n' + message)}`;
+      const mailtoUrl = `mailto:dangquocthinh2005@gmail.com?subject=${encodeURIComponent('AI Engineering Inquiry from ' + name)}&body=${encodeURIComponent('Sender: ' + name + ' (' + email + ')\n\nMessage:\n' + message)}`;
       window.location.href = mailtoUrl;
 
       showToast('Opening email client...');

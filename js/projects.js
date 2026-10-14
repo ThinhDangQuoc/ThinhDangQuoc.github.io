@@ -1,6 +1,6 @@
 /**
  * Flagship Projects Controller
- * Handles project rendering, interactive tab inspection, and SVG telemetry.
+ * Populated directly from Thinh Dang Quoc's technical projects portfolio.
  */
 (function() {
   'use strict';
@@ -10,95 +10,127 @@
       id: 'multimodal-video-retrieval',
       category: 'multimodal',
       title: 'Multimodal Video Retrieval System',
-      badge: 'Flagship System',
-      description: 'End-to-end semantic video search system utilizing dual-encoder cross-modal embeddings, temporal frame pooling, and high-dimensional vector indices.',
-      tags: ['Multimodal AI', 'Video-Language', 'Vector Search', 'PyTorch', 'FAISS', 'FastAPI'],
+      badge: 'Flagship System • Sep — Dec 2025',
+      description: 'End-to-end AI retrieval pipeline for text, image, audio, and video processing 10,000+ multimedia items using OpenCLIP embeddings and Milvus vector indices.',
+      tags: ['Multimodal AI', 'OpenCLIP', 'Milvus Vector DB', 'FastAPI', 'Docker', 'OpenCV'],
       github: 'https://github.com/ThinhDangQuoc/multimodal-video-retrieval-system',
       demo: '#',
       overview: {
-        problem: 'Searching unannotated video archives with natural language is bottlenecked by the cross-modal semantic gap, temporal sequence misalignment, and slow indexing latency.',
-        solution: 'Implemented a dual-encoder architecture projecting video temporal frames and query text into a joint latent space, indexed via FAISS/Milvus HNSW graphs with cross-attention reranking.',
-        results: 'Achieved sub-45ms search latency across 50,000+ video clips with 84.6% Recall@5 on benchmark evaluation datasets.'
+        problem: 'Cross-modal semantic search across high-volume video and audio archives requires bridging the modality gap while handling high concurrency with low retrieval latency.',
+        solution: 'Built automated embedding and similarity search pipelines using OpenCLIP joint latent representations and Milvus vector indexing, deployed via containerized FastAPI microservices.',
+        results: 'Successfully indexed 10,000+ multimedia assets and achieved ~150ms average query latency under 50 concurrent requests in benchmark load testing.'
       },
       diagram: {
         nodes: [
-          { id: 'n1', title: 'Query / Video Input', sub: 'Text / Video Tensor', specs: 'B × 3 × T × H × W', latency: '5ms' },
-          { id: 'n2', title: 'Feature Extractor', sub: 'Vision-Language Backbone', specs: 'Temporal Pooling', latency: '18ms' },
-          { id: 'n3', title: 'Vector Index', sub: 'HNSW Cosine Space', specs: '768-d Vectors', latency: '8ms' },
-          { id: 'n4', title: 'Neural Reranker', sub: 'Cross-Modal Attention', specs: 'Top-50 Candidates', latency: '12ms' },
-          { id: 'n5', title: 'Timestamp Clips', sub: 'Ranked Results', specs: 'Top-K Video Matches', latency: '< 2ms' }
+          { id: 'n1', title: 'Multimodal Input', sub: 'Text / Audio / Video', specs: '10,000+ Item Scale', latency: '10ms' },
+          { id: 'n2', title: 'OpenCLIP Encoder', sub: 'Vision-Language Net', specs: 'Joint 512-d Latent', latency: '45ms' },
+          { id: 'n3', title: 'Milvus Vector DB', sub: 'HNSW Indexing', specs: 'Similarity Search', latency: '25ms' },
+          { id: 'n4', title: 'FastAPI Service', sub: 'Async Worker Queue', specs: '50 Concurrent Conns', latency: '35ms' },
+          { id: 'n5', title: 'Retrieved Output', sub: 'Ranked Video Segments', specs: 'Avg Latency ~150ms', latency: '15ms' }
         ]
       },
       techStack: [
-        { name: 'PyTorch', role: 'Deep Learning Modeling' },
-        { name: 'Hugging Face CLIP', role: 'Vision-Language Alignments' },
-        { name: 'FAISS / Milvus', role: 'Approximate Nearest Neighbor Index' },
-        { name: 'FastAPI & Docker', role: 'Microservice Deployment' }
+        { name: 'OpenCLIP', role: 'Vision-Language Multimodal Embedding' },
+        { name: 'Milvus', role: 'High-Dimensional Vector Search Engine' },
+        { name: 'FastAPI', role: 'Low-Latency Asynchronous Serving' },
+        { name: 'Docker', role: 'Containerized Service Deployment' },
+        { name: 'OpenCV', role: 'Video Frame Processing & Extraction' }
       ]
     },
     {
-      id: 'rl-adaptive-planning',
+      id: 'rl-automated-trading',
       category: 'rl',
-      title: 'Deep Reinforcement Learning for Adaptive Planning',
-      badge: 'Research Project',
-      description: 'Replacing evolutionary search algorithms with an Actor-Critic policy gradient framework for sample-efficient multi-step planning.',
-      tags: ['Reinforcement Learning', 'Policy Optimization', 'PPO/SAC', 'Evolutionary Algorithms', 'PyTorch'],
+      title: 'Automated Stock Trading Using Deep Reinforcement Learning',
+      badge: 'Reinforcement Learning • Mar — May 2026',
+      description: 'Formulated a 91-dim continuous OpenAI Gym environment and trained Actor-Critic agents with Turbulence Index risk circuit breakers on the HOSE stock exchange.',
+      tags: ['Reinforcement Learning', 'Gymnasium', 'DDPG', 'PPO', 'A2C', 'Turbulence Index', 'Python'],
       github: 'https://github.com/ThinhDangQuoc',
       demo: '#',
       overview: {
-        problem: 'Evolutionary planning algorithms suffer from exponential sample complexity and slow convergence in non-stationary high-dimensional state spaces.',
-        solution: 'Re-framed the optimization as a continuous Markov Decision Process (MDP) using Proximal Policy Optimization (PPO) with entropy regularization and reward shaping.',
-        results: 'Reduced sample collection requirements by 68% and achieved 3.4x faster convergence to Pareto-optimal control policies.'
+        problem: 'Algorithmic trading in emerging markets requires handling non-stationary dynamics, strict settlement lags (T+3), ±7% price collars, and transaction fee frictions.',
+        solution: 'Designed a custom MDP Gym environment with 91-dim state space and 15-dim continuous action space. Trained DDPG, PPO, and A2C agents with quarterly rolling windows and a Turbulence Index volatility circuit breaker.',
+        results: 'In out-of-sample backtesting (2021–2025), DDPG achieved +49.66% cumulative return (11.77% annualized), a 0.6432 Sharpe ratio, and reduced maximum drawdown to -16.57%.'
       },
       diagram: {
         nodes: [
-          { id: 'r1', title: 'Environment State', sub: 'Observation Vector', specs: 'Dim = 64 Cont.', latency: '1ms' },
-          { id: 'r2', title: 'Actor-Critic Net', sub: 'Dual MLP Policy/Value', specs: 'Hidden = [256, 256]', latency: '4ms' },
-          { id: 'r3', title: 'Advantage Engine', sub: 'GAE (λ = 0.95)', specs: 'Temporal Difference', latency: '2ms' },
-          { id: 'r4', title: 'Policy Update', sub: 'PPO Clipped Objective', specs: 'ε = 0.2 Clipping', latency: '6ms' },
-          { id: 'r5', title: 'Action Execution', sub: 'Continuous Control', specs: 'Action Range [-1, 1]', latency: '1ms' }
+          { id: 'r1', title: 'Market State', sub: 'Cash + 15 Stocks + Ind.', specs: '91-Dim State Space', latency: '2ms' },
+          { id: 'r2', title: 'Actor-Critic Agent', sub: 'DDPG / PPO / A2C', specs: 'Quarterly Windows', latency: '12ms' },
+          { id: 'r3', title: 'Risk Breaker', sub: 'Turbulence Index', specs: 'Volatility Circuit', latency: '4ms' },
+          { id: 'r4', title: 'Execution Engine', sub: 'HOSE T+3 & Collar Rules', specs: '15-Dim Action Space', latency: '3ms' },
+          { id: 'r5', title: 'Portfolio Return', sub: 'Out-of-Sample Test', specs: '49.66% Cumulative', latency: '< 1ms' }
         ]
       },
       benchmark: {
-        rlScore: '94.2% Optimal',
-        evoScore: '61.5% Convergence',
-        rlSteps: '120k Steps',
-        evoSteps: '380k Steps'
+        rlScore: '+49.66% Cumulative Return (DDPG)',
+        evoScore: '0.6432 Sharpe Ratio (-16.57% Max DD)',
+        rlSteps: 'Annualized: 11.77%',
+        evoSteps: 'Out-of-sample: 2021 — 2025'
       },
       techStack: [
-        { name: 'PyTorch', role: 'Policy & Value Networks' },
-        { name: 'Gymnasium / PettingZoo', role: 'Environment Simulation' },
-        { name: 'WandB', role: 'Experiment & Gradient Tracking' },
-        { name: 'NumPy / SciPy', role: 'Advantage Estimation Math' }
+        { name: 'OpenAI Gym', role: 'Custom 91-Dim Financial Environment' },
+        { name: 'DDPG / PPO / A2C', role: 'Actor-Critic Deep Policy Gradient' },
+        { name: 'Pandas & NumPy', role: 'Market Data & Feature Engineering' },
+        { name: 'Matplotlib & Seaborn', role: 'Financial & Drawdown Visualizations' }
       ]
     },
     {
-      id: 'neural-inference-pipeline',
-      category: 'systems',
-      title: 'Real-Time Neural Inference & Streaming Pipeline',
-      badge: 'Systems & Infrastructure',
-      description: 'High-throughput model serving architecture with dynamic batching, FP16 quantization, and asynchronous worker pools.',
-      tags: ['Systems & MLOps', 'TensorRT', 'ONNX', 'Low-Latency', 'AsyncIO'],
+      id: 'skin-cancer-convnextv2',
+      category: 'multimodal',
+      title: 'Skin Cancer Detection: ConvNeXtV2 + Focal Self-Attention',
+      badge: 'Medical AI • Mar — May 2026',
+      description: 'Hybrid deep learning architecture combining ConvNeXtV2 local feature representations with Focal Self-Attention global context modeling for 8 skin lesion categories.',
+      tags: ['Computer Vision', 'ConvNeXtV2', 'Focal Self-Attention', 'PyTorch', 'ISIC 2019', 'NVIDIA T4'],
       github: 'https://github.com/ThinhDangQuoc',
       demo: '#',
       overview: {
-        problem: 'Real-time video analysis models fail under burst traffic due to GPU memory thrashing and synchronous I/O blocking.',
-        solution: 'Architected an asynchronous worker pipeline using TensorRT FP16 engines, shared memory IPC queues, and dynamic adaptive batching.',
-        results: 'Achieved 4.2x increase in throughput (QPS) while maintaining a strict 99th-percentile latency under 60ms.'
+        problem: 'Dermatological lesion classification suffers from extreme class imbalance across 8 categories and subtle inter-class visual boundaries.',
+        solution: 'Built a hybrid model pairing ConvNeXtV2 for fine local visual details and Focal Self-Attention for long-range global context. Trained on 25,331 images from ISIC 2019 with CutMix, MixUp, and Elastic Deformation.',
+        results: 'Trained on NVIDIA Tesla T4 GPU for 40 epochs; stabilized loss convergence curves and systematically mapped class balance performance across all 8 diagnostic categories.'
       },
       diagram: {
         nodes: [
-          { id: 's1', title: 'Streaming Client', sub: 'gRPC / WebSocket', specs: 'Concurrent Streams', latency: '3ms' },
-          { id: 's2', title: 'Dynamic Batcher', sub: 'Adaptive Queue', specs: 'Batch Window 10ms', latency: '10ms' },
-          { id: 's3', title: 'Quantized Engine', sub: 'TensorRT FP16', specs: 'GPU Tensor Cores', latency: '14ms' },
-          { id: 's4', title: 'Post-Processor', sub: 'Zero-Copy Shared Mem', specs: 'Async Worker Pool', latency: '4ms' },
-          { id: 's5', title: 'Streaming Output', sub: 'Real-Time Response', specs: 'Latency < 40ms', latency: '2ms' }
+          { id: 'c1', title: 'Dermoscopy Input', sub: 'ISIC 2019 Dataset', specs: '25,331 Medical Images', latency: '5ms' },
+          { id: 'c2', title: 'Augmentation', sub: 'CutMix + MixUp', specs: 'Elastic Deformation', latency: '15ms' },
+          { id: 'c3', title: 'ConvNeXtV2', sub: 'Local Feature Extractor', specs: 'Hierarchical CNN', latency: '28ms' },
+          { id: 'c4', title: 'Focal Attention', sub: 'Global Context Modeler', specs: 'Multi-scale Attention', latency: '22ms' },
+          { id: 'c5', title: 'Classification', sub: '8 Lesion Categories', specs: 'Melanoma, BCC, AK, etc', latency: '4ms' }
         ]
       },
       techStack: [
-        { name: 'TensorRT / ONNX', role: 'Model Optimization & FP16' },
-        { name: 'Python AsyncIO', role: 'Asynchronous IPC Queues' },
-        { name: 'Docker & CUDA', role: 'Containerized GPU Runtime' }
+        { name: 'PyTorch', role: 'Hybrid Deep Learning Modeling' },
+        { name: 'ConvNeXtV2', role: 'Modern Local Convolutional Backbone' },
+        { name: 'Focal Self-Attention', role: 'Fine-Grained Global Context' },
+        { name: 'NVIDIA Tesla T4', role: '16GB VRAM GPU Acceleration' }
+      ]
+    },
+    {
+      id: 'sentiment-roberta',
+      category: 'nlp',
+      title: 'Sentiment Analysis with Fine-Tuned RoBERTa',
+      badge: 'NLP & Transformers • Apr — Jun 2025',
+      description: 'Fine-tuned Transformer NLP pipeline on 20,000+ labeled samples, achieving an 87% weighted F1-score with containerized FastAPI deployment.',
+      tags: ['NLP', 'RoBERTa', 'Hugging Face', 'Transformers', 'FastAPI', 'Docker'],
+      github: 'https://github.com/ThinhDangQuoc',
+      demo: '#',
+      overview: {
+        problem: 'Accurately categorizing multi-class sentiment in noisy user texts while overcoming class label skew and latency overhead of large models.',
+        solution: 'Fine-tuned RoBERTa with custom tokenization and learning rate schedules. Built automated preprocessing and dataset balancing pipelines with containerized FastAPI serving.',
+        results: 'Achieved ~87% weighted F1-score (+6% improvement over baseline estimators) with sub-35ms inference response times.'
+      },
+      diagram: {
+        nodes: [
+          { id: 'l1', title: 'Text Stream', sub: 'User Inputs', specs: '20,000+ Samples', latency: '2ms' },
+          { id: 'l2', title: 'Tokenizer', sub: 'RoBERTa BPE', specs: 'Max Seq Length 256', latency: '6ms' },
+          { id: 'l3', title: 'Transformer', sub: 'Fine-Tuned RoBERTa', specs: '12 Layers / 768 Hidden', latency: '24ms' },
+          { id: 'l4', title: 'FastAPI API', sub: 'Docker Microservice', specs: 'Async REST Endpoint', latency: '5ms' },
+          { id: 'l5', title: 'Sentiment Class', sub: 'Weighted F1: 87%', specs: 'Positive/Neutral/Neg', latency: '< 2ms' }
+        ]
+      },
+      techStack: [
+        { name: 'Hugging Face Transformers', role: 'RoBERTa Model Architecture' },
+        { name: 'PyTorch', role: 'Training & Parameter Optimization' },
+        { name: 'Scikit-learn', role: 'Evaluation Metrics & Baselines' },
+        { name: 'FastAPI & Docker', role: 'API Serving & Containerization' }
       ]
     }
   ];
@@ -117,7 +149,7 @@
           <div class="project-title-group">
             <span class="section-badge" style="margin-bottom: 0.5rem;">${p.badge}</span>
             <h3>${p.title}</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 720px;">${p.description}</p>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 740px;">${p.description}</p>
           </div>
           <div class="project-actions">
             <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="View ${p.title} on GitHub">
@@ -162,7 +194,7 @@
             <div class="architecture-diagram-container">
               <div class="diagram-header">
                 <span>Interactive Pipeline Flow (Hover nodes to inspect telemetry)</span>
-                <span class="diagram-badge">End-to-End Latency &lt; 50ms</span>
+                <span class="diagram-badge">End-to-End Validation</span>
               </div>
               
               <!-- SVG Dataflow Pipeline -->
@@ -186,20 +218,20 @@
               <div class="node-telemetry" id="telemetry-${p.id}">
                 <span class="telemetry-title">Stage Selected: ${p.diagram.nodes[0].title}</span>
                 <div class="telemetry-specs">
-                  <span>Dimension: ${p.diagram.nodes[0].specs}</span>
-                  <span>Latency: ${p.diagram.nodes[0].latency}</span>
+                  <span>Configuration: ${p.diagram.nodes[0].specs}</span>
+                  <span>Latency Budget: ${p.diagram.nodes[0].latency}</span>
                 </div>
               </div>
 
               ${p.benchmark ? `
                 <div class="benchmark-chart">
                   <div class="chart-bar-item">
-                    <span class="chart-label">Deep RL Policy:</span>
+                    <span class="chart-label">Cumulative Return:</span>
                     <div class="chart-track"><div class="chart-fill rl"></div></div>
                     <span class="chart-val">${p.benchmark.rlScore}</span>
                   </div>
                   <div class="chart-bar-item">
-                    <span class="chart-label">Evolutionary Search:</span>
+                    <span class="chart-label">Risk Profile:</span>
                     <div class="chart-track"><div class="chart-fill evolutionary"></div></div>
                     <span class="chart-val">${p.benchmark.evoScore}</span>
                   </div>
@@ -258,7 +290,7 @@
             telemetryBox.innerHTML = `
               <span class="telemetry-title">Stage Selected: ${nodeData.title} (${nodeData.sub})</span>
               <div class="telemetry-specs">
-                <span>Dimension: ${nodeData.specs}</span>
+                <span>Configuration: ${nodeData.specs}</span>
                 <span>Latency Budget: ${nodeData.latency}</span>
               </div>
             `;
