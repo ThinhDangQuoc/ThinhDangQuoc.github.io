@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thinh Dang Quoc | AI & Machine Learning Engineer | Multimodal AI & RL</title>
+  <meta name="description" content="Portfolio of Thinh Dang Quoc, AI & Machine Learning Engineer and Researcher specializing in Multimodal Video Retrieval, Deep Reinforcement Learning, and scalable inference pipelines.">
+  <meta name="keywords" content="Thinh Dang Quoc, Machine Learning Engineer, Multimodal AI, Video Retrieval, Reinforcement Learning, PyTorch, FAISS, Deep Learning Researcher">
+  <meta name="author" content="Thinh Dang Quoc">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thinhdangquoc.github.io/">
+  <meta property="og:title" content="Thinh Dang Quoc | AI & Machine Learning Engineer">
+  <meta property="og:description" content="Exploring Multimodal Video-Language Retrieval, Deep RL, and High-Throughput Inference Systems.">
+  <meta property="og:image" content="assets/og-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://thinhdangquoc.github.io/">
+  <meta property="twitter:title" content="Thinh Dang Quoc | AI & Machine Learning Engineer">
+  <meta property="twitter:description" content="Exploring Multimodal Video-Language Retrieval, Deep RL, and High-Throughput Inference Systems.">
+  <meta property="twitter:image" content="assets/og-preview.png">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/architecture.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Thinh Dang Quoc",
+    "jobTitle": "AI & Machine Learning Engineer",
+    "url": "https://github.com/ThinhDangQuoc",
+    "sameAs": [
+      "https://github.com/ThinhDangQuoc"
+    ],
+    "knowsAbout": [
+      "Multimodal Video Retrieval",
+      "Deep Reinforcement Learning",
+      "Vector Search & Embeddings",
+      "PyTorch",
+      "High-Performance ML Inference"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Neural Constellation Canvas -->
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Thinh Dang Quoc Homepage">
+        <span class="monogram">TQ</span>
+        <div class="brand-text">
+          <span class="brand-name">Thinh Dang Quoc</span>
+          <span class="brand-status">
+            <span class="pulse-dot"></span> Available for ML Roles
+          </span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Competencies</a>
+        <a href="#timeline" class="nav-link">Timeline</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary" id="btn-download-cv">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Get Resume
+        </a>
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span class="pill-spark">✦</span>
+          <span>AI / Machine Learning Engineer & Researcher</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Engineering Intelligent Systems from <span class="gradient-text">Research</span> to <span class="gradient-text-cyan">Scalable Deployment</span>.
+        </h1>
+
+        <p class="hero-description">
+          Specializing in <strong>Multimodal Video-Language Retrieval</strong>, <strong>Deep Reinforcement Learning</strong>, and high-throughput vector systems. Bridging state-of-the-art deep learning architectures with production-grade engineering.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-glow" id="cta-view-projects">
+            <span>Explore Flagship Work</span>
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/ThinhDangQuoc" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="cta-github">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub Profile</span>
+          </a>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-grid">
+          <div class="metric-card glass-panel">
+            <span class="metric-num">Multimodal</span>
+            <span class="metric-label">Video & Text Semantic Alignment</span>
+          </div>
+          <div class="metric-card glass-panel">
+            <span class="metric-num">Deep RL</span>
+            <span class="metric-label">Policy Optimization & Planning</span>
+          </div>
+          <div class="metric-card glass-panel">
+            <span class="metric-num">&lt; 50ms</span>
+            <span class="metric-label">Vector Search Retrieval Latency</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship Projects Section -->
+    <section class="section-padding" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Flagship Systems</span>
+          <h2 class="section-title">Architected for Scale & Precision</h2>
+          <p class="section-subtitle">Deep dive into interactive system pipelines, benchmarks, and production-tested AI architectures.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-pills" role="tablist" aria-label="Project Categories">
+          <button class="filter-btn active" data-filter="all">All Systems</button>
+          <button class="filter-btn" data-filter="multimodal">Multimodal AI</button>
+          <button class="filter-btn" data-filter="rl">Reinforcement Learning</button>
+          <button class="filter-btn" data-filter="systems">Systems & MLOps</button>
+        </div>
+
+        <!-- Project Cards Container -->
+        <div class="projects-list" id="projects-container">
+          <!-- Dynamically populated and enriched by js/projects.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Competencies Section -->
+    <section class="section-padding" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Core Tooling & Stack</span>
+          <h2 class="section-title">Technical Competencies</h2>
+          <p class="section-subtitle">Click on any competency to spotlight connected projects and system architectures.</p>
+        </div>
+
+        <div class="skills-grid" id="skills-matrix">
+          <!-- Populated by HTML/JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline & Milestones Section -->
+    <section class="section-padding" id="timeline">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Journey & Research</span>
+          <h2 class="section-title">Experience & Milestones</h2>
+          <p class="section-subtitle">Academic foundations in Computer Science (Khoa học Máy tính) and milestones in applied AI research.</p>
+        </div>
+
+        <div class="timeline-container" id="timeline-list">
+          <!-- Timeline entries -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Social Hub -->
+    <section class="section-padding" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Get In Touch</span>
+          <h2 class="section-title">Let's Build Intelligent Systems</h2>
+          <p class="section-subtitle">Open for AI Engineering, Research Engineering roles, and academic collaborations.</p>
+        </div>
+
+        <div class="contact-wrapper glass-panel">
+          <div class="contact-info">
+            <h3>Direct Communication</h3>
+            <p>Feel free to reach out for research discussions, engineering opportunities, or technical inquiries.</p>
+            
+            <div class="contact-email-box">
+              <span class="email-label">Primary Email:</span>
+              <div class="email-copy-bar">
+                <code id="contact-email-text">thinhdangquoc.ai@gmail.com</code>
+                <button class="btn-copy" id="btn-copy-email" aria-label="Copy email address to clipboard">
+                  <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com/ThinhDangQuoc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Google Scholar">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                <span>Google Scholar</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="form-name">Your Name</label>
+              <input type="text" id="form-name" name="name" required placeholder="Dr. Jane Doe / Engineering Lead">
+            </div>
+            <div class="form-group">
+              <label for="form-email">Your Email</label>
+              <input type="email" id="form-email" name="email" required placeholder="jane@organization.ai">
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" rows="4" required placeholder="Interested in discussing multimodal research or ML engineering roles..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-glow w-full" id="btn-submit-message">
+              <span>Send Message</span>
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Thinh Dang Quoc. Crafted with precision for high-performance AI systems.</p>
+      <p class="footer-meta">Zero build step • Vanilla HTML5/CSS3/ES6+ • Deployable to GitHub Pages</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-notification" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
