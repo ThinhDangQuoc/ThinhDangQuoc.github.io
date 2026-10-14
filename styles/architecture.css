@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Architecture Dataflow Diagram & Interactive Telemetry Styles
+   ========================================================================== */
+
+.architecture-diagram-container {
+  background: rgba(4, 7, 13, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.85rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
+  overflow-x: auto;
+}
+
+.diagram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.diagram-badge {
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.35rem;
+}
+
+.architecture-svg {
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+  display: block;
+}
+
+/* SVG Pipeline Elements */
+.pipeline-node {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pipeline-node rect {
+  fill: #0d121f;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1.5px;
+  rx: 8px;
+  transition: all var(--transition-fast);
+}
+
+.pipeline-node text {
+  fill: #f8fafc;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-anchor: middle;
+}
+
+.pipeline-node .node-subtext {
+  fill: #94a3b8;
+  font-size: 9px;
+}
+
+.pipeline-node:hover rect,
+.pipeline-node.active rect {
+  fill: rgba(139, 92, 246, 0.2);
+  stroke: var(--accent-violet);
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+}
+
+.pipeline-arrow path {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 2px;
+  stroke-dasharray: 4, 4;
+  animation: flowLine 20s linear infinite;
+}
+
+@keyframes flowLine {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+.pipeline-node:hover ~ .pipeline-arrow path {
+  stroke: var(--accent-cyan);
+}
+
+/* Hover Telemetry Card */
+.node-telemetry {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.65rem;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.telemetry-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.telemetry-specs {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+}
+
+/* Comparison Telemetry Chart (RL vs Evolutionary) */
+.benchmark-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.chart-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chart-label {
+  width: 140px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.chart-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s var(--ease-smooth);
+}
+
+.chart-fill.rl {
+  background: linear-gradient(90deg, var(--accent-violet), var(--accent-cyan));
+  width: 92%;
+}
+
+.chart-fill.evolutionary {
+  background: rgba(255, 255, 255, 0.3);
+  width: 48%;
+}
+
+.chart-val {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #fff;
+  width: 75px;
+  text-align: right;
+}
